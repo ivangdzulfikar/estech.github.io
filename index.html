@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estech | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- <div class="card-container" id="cardContainer"></div> -->
+
+
+  <!-- header -->
+  <header>
+    <nav>
+      <img src="img/logo.png" alt="Estech logo" class="logo">
+
+      <ul>
+        <li><a href="#">home</a></li>
+        <li><a href="#">about</a></li>
+        <li><a href="#menu">menu</a></li>
+      </ul>
+    </nav>
+
+  </header>
+  <!-- heder -->
+  
+  <!-- main -->
+  <div class="container">
+    <section class="hero">
+      <img src="img/hero.jpg" alt="Estech hero" class="hero-img">
+      <div class="hero-body">
+        <h1>Estech</h1>
+        <span>Rasa teh, Sentuhan Teknologi</span>
+        <a class="btn" href="#">Order Now</a>
+      </div>
+    </section>
+
+    
+    <main>
+      <section class="quote">
+        <img src="img/1.jpg" alt="Immage Quote">
+        <p><span>"</span>Lorem ipsum dolor sit <br>amet consectetur.<span>"</span></p>
+        <span class="author">Robert D. Caniago</span>
+      </section>
+
+            <section id="menu">
+        <h2>Food</h2>
+        <div class="card-container" id="cardContainer"></div>
+        <h2>Beverages</h2>
+        
+        <div class="card-container" id="cardContainer2"></div>
+      </section>
+
+      <section class="about">
+        <div class="wrap">
+          <h2>Es Tech</h2>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque totam dolor deserunt accusantium maiores eos voluptates labore atque eum obcaecati!</p>
+          <!-- <p class="price">Rp.25.000</p>
+          <p class="discount">Rp.15.000</p>
+          <a class="btn" href="#">Order</a> -->
+        </div>
+        <img src="img/about.jpg" alt="Promo Image">
+      </section>      
+    </main>
+    
+  </div>
+
+  <section class="gallery">
+    <h2>gallery</h2>
+
+    <div class="img">
+    <img src="img/1.jpg" alt="1">
+    <img src="img/2.jpg" alt="2">
+    <img src="img/3.jpg" alt="3">
+    <img src="img/4.jpg" alt="4">
+    <img src="img/5.jpg" alt="5">
+    <img src="img/6.jpg" alt="6">
+    <img src="img/7.jpg" alt="7">
+    <img src="img/8.jpg" alt="8">
+    <img src="img/9.jpg" alt="9">
+    <img src="img/10.jpg" alt="10">
+    </div>
+  </section>
+  <!-- main -->
+
+  <!-- footer -->
+   
+  <footer>
+    <p>Estech @ 2025. Ivank D.</p>
+  </footer>
+  <!-- footer -->
+
+
+  <script>
+    const makanan = [
+      {
+        nama: "Rasbery Cake",
+        harga: 25000,
+        rating: 4.5,
+        gambar: "img/rasberry-cake.jpg"
+      },
+      {
+        nama: "Black Pancake",
+        harga: 30000,
+        rating: 4.7,
+        gambar: "img/black-pancake.jpg"
+      },
+      {
+        nama: "Teast Berry",
+        harga: 20000,
+        rating: 4.3,
+        gambar: "img/toast-berry.jpg"
+      }
+    ];
+
+    const container = document.getElementById('cardContainer');
+
+    makanan.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${item.gambar}" alt="${item.nama}">
+        <div class="card-content">
+          <h3>${item.nama}</h3>
+          <div class="price">Rp${item.harga.toLocaleString()}</div>
+          <div class="rating">⭐ ${item.rating}</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-cart">+ Keranjang</button>
+          <button class="btn-order">Pesan</button>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+
+    const minuman = [
+      {
+        nama: "Green Tea",
+        harga: 25000,
+        rating: 4.5,
+        gambar: "img/greentea.jpg"
+      },
+      {
+        nama: "Lemon Tea",
+        harga: 30000,
+        rating: 4.7,
+        gambar: "img/lemon-tea.jpg"
+      },
+      {
+        nama: "Black Tea",
+        harga: 20000,
+        rating: 4.3,
+        gambar: "img/black-tea.jpg"
+      }
+    ];
+
+    const container2 = document.getElementById('cardContainer2');
+
+    minuman.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${item.gambar}" alt="${item.nama}">
+        <div class="card-content">
+          <h3>${item.nama}</h3>
+          <div class="price">Rp${item.harga.toLocaleString()}</div>
+          <div class="rating">⭐ ${item.rating}</div>
+        </div>
+        <div class="card-actions">
+          <button class="btn-cart">+ Keranjang</button>
+          <button class="btn-order">Pesan</button>
+        </div>
+      `;
+      container2.appendChild(card);
+    });
+  </script>
+
+</body>
+
+</html>
